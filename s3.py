@@ -6,3 +6,7 @@ bucket_name="bucketforme11"  #name of the bucket
 bucket_creation = s3.create_bucket(Bucket=bucket_name,
       CreateBucketConfiguration={
           'LocationConstraint': 'ap-south-1'})
+
+
+data = open("myimg.jpeg", 'rb')
+bucket_creation.put_object(Key='myimg.jpeg' , Body=data)
